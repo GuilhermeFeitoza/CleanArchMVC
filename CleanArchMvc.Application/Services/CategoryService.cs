@@ -31,13 +31,13 @@ namespace CleanArchMvc.Application.Services
             return _mapper.Map<IEnumerable<CategoryDTO>>(categoriesEntity);
         }
 
-       public async Task<CategoryDTO> GetCategoryById(int? id)
+        public async Task<CategoryDTO> GetCategoryById(int? id)
         {
-           var categoryEntity = _categoryRepository.GetById(id);
+            var categoryEntity = _categoryRepository.GetById(id);
             return _mapper.Map<CategoryDTO>(categoryEntity);
         }
 
-       public async Task Add(CategoryDTO categoryDTO)
+        public async Task Add(CategoryDTO categoryDTO)
         {
           var categoryEntity = _mapper.Map<Category>(categoryDTO);
           await _categoryRepository.Create(categoryEntity);
